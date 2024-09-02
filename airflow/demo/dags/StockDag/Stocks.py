@@ -1,10 +1,10 @@
 import requests
 
-#todo: hide api key by using airflow variables
-marketstack_api_key = ''
+import AWS
 
 
 def get_sp500_data():
+    marketstack_api_key = AWS.get_variable('marketstack_api_key')
     url = f"https://api.marketstack.com/v1/eod?access_key={marketstack_api_key}"
     querystring = {"symbols": "SPY", "exchange": "ARCX"}
     sp500_response = requests.get(url, params=querystring).json()
