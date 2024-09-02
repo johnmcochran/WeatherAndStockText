@@ -1,6 +1,7 @@
 import requests
-
-import AWS
+import sys
+sys.path.append('/opt/airflow/demo/dags/utils')
+import utils.AWS
 
 
 def get_sp500_data():

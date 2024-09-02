@@ -7,7 +7,17 @@ getting airflow to work
     use astro dev start/restart to push changes
     if it seems like nothing is making sense after pushing a change, try astro dev kill followed by start
 
+    in order to load a module from other directory in docker, you need to add the directory to the path:
+        import sys
+        sys.path.append('/opt/airflow/demo/dags/utils')
+        import utils.AWS
+
+        opt is a folder in docker container
+
+
 AWS secrets manager
     need credentials to use boto3
     need the user's access key id and secret access key
     use json library to convert AWS response to dictionary, otherwise, just copy code given by AWS
+
+__init__.py files can be used in a folder to let python be able to reference a module from another folder (this doesn't work well with docker, but learned this nonetheless)

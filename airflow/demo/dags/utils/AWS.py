@@ -11,7 +11,7 @@ def get_variable(variable_name):
     client = session.client(
         service_name='secretsmanager',
         region_name=region_name,
-        aws_access_key_id=os.getenv('etl_user_access_key'),
+        aws_access_key_id=os.getenv('etl_user_access_key'), # todo: add variables to astro variables
         aws_secret_access_key=os.getenv('etl_user_secret_access_key')
     )
 
