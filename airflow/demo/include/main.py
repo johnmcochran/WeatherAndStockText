@@ -6,7 +6,7 @@ sys.path.append(dag_directory)
 sys.path.append(os.path.dirname(__file__))
 import Weather
 from airflow.demo.include import Twilio
-from airflow.demo.dags.StockDag import Stocks
+from airflow.demo.dags.utils import Stocks
 
 indy_latitude = 39.791
 indy_longitude = -86.148003

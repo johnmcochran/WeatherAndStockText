@@ -4,7 +4,7 @@ getting airflow to work
     put modules in same folder as dag so that it was easier to import
     need __init__.py in all folders with python files that need to be read
 
-    use astro dev start/restart to push changes
+    navigate to demo folder to use astro dev start/restart to push changes
     if it seems like nothing is making sense after pushing a change, try astro dev kill followed by start
 
     in order to load a module from other directory in docker, you need to add the directory to the path:

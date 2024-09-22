@@ -11,7 +11,8 @@ import os
 dag_directory = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(dag_directory)
 sys.path.append(os.path.dirname(__file__))
-import Weather
+from airflow.demo.dags.utils import Weather
+
 daily_message_file = Dataset("/tmp/daily_message_file.txt")
 
 with DAG(
