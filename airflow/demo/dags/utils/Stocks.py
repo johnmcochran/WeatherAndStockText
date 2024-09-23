@@ -1,7 +1,5 @@
 import requests
-import sys
-sys.path.append('/opt/airflow/demo/dags/utils')
-import utils.AWS
+from . import AWS
 
 
 def get_sp500_data():
@@ -10,7 +8,7 @@ def get_sp500_data():
     querystring = {"symbols": "SPY", "exchange": "ARCX"}
     sp500_response = requests.get(url, params=querystring).json()
     return sp500_response
-
+b
 
 def build_sp500_close_price_message(sp500_response):
     sp500close = sp500_response['data'][0]['close']

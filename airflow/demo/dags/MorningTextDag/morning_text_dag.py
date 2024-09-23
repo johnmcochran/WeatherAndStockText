@@ -3,13 +3,8 @@ from airflow.decorators import task
 from pendulum import datetime
 import sys
 import os
-dag_directory = os.path.dirname(os.path.abspath(__file__))
-sys.path.append(dag_directory)
-sys.path.append(os.path.dirname(__file__))
-sys.path.append('/opt/airflow/demo/dags/utils')
-import AWS
-import Stocks
-import Weather
+from utils import Stocks
+from utils import Weather
 
 daily_message_file = Dataset("/tmp/daily_message_file.txt")
 
